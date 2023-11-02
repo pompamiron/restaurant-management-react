@@ -21,7 +21,6 @@ const Footer: React.FC<FooterProps> = ({
 	isDisabledSubmit=false
 }) => {
 	const navigate = useNavigate();
-	console.log(isDisabledSubmit);
 	return (
 		<OrderFooter>
 			<PriceContainer>

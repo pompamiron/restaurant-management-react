@@ -53,7 +53,6 @@ const OrderManagementPage: React.FC<OrderManagementPageProps> = ({
 				payment_status: paymentStatus,
 				items,
 			};
-			console.log("orderData",orderData);
 			await createOrder(orderData);
 			navigate("/order-management");
 		} catch (error) {
