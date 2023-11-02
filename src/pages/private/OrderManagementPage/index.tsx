@@ -29,41 +29,41 @@ const ButtonWrapper = styled.div`
 `;
 
 const OrderManagementPage: React.FC = () => {
-  const navigate = useNavigate();
-  const [orderList, setOrderList] = useState<Order[]>([]);
+	const navigate = useNavigate();
+	const [orderList, setOrderList] = useState<Order[]>([]);
 
-  useEffect(() => {
-    const fetchOrder = async () => {
-      try {
-        const orders = await listOrders("pending");
-        setOrderList(orders);
-      } catch (error) {
-        console.error('Error fetching Order list:', error);
-      }
-    };
-    fetchOrder();
-  }, []);
+	useEffect(() => {
+		const fetchOrder = async () => {
+			try {
+				const orders = await listOrders("pending");
+				setOrderList(orders);
+			} catch (error) {
+				console.error("Error fetching Order list:", error);
+			}
+		};
+		fetchOrder();
+	}, []);
 
-  return (
-    <>
-      <ButtonWrapper>
-        <Button
-          color={colors.success}
-          onClick={() => navigate(`/order/create`)}
-          style={{ margin: "0.25rem", width: "12rem", fontSize: "1.25rem" }}
-        >
+	return (
+		<>
+			<ButtonWrapper>
+				<Button
+					color={colors.success}
+					onClick={() => navigate("/order/create")}
+					style={{ margin: "0.25rem", width: "12rem", fontSize: "1.25rem" }}
+				>
           Add New Order
-        </Button>
-      </ButtonWrapper>
-      <CardContainer>
-        {orderList.map((order) => (
-          <OrderWrapper key={order.id} onClick={() => navigate(`/order/${order.id}`)}>
-            <CardOrder order={order} />
-          </OrderWrapper>
-        ))}
-      </CardContainer>
-    </>
-  );
+				</Button>
+			</ButtonWrapper>
+			<CardContainer>
+				{orderList.map((order) => (
+					<OrderWrapper key={order.id} onClick={() => navigate(`/order/${order.id}`)}>
+						<CardOrder order={order} />
+					</OrderWrapper>
+				))}
+			</CardContainer>
+		</>
+	);
 };
 
 export default OrderManagementPage;

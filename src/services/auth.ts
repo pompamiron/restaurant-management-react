@@ -15,36 +15,36 @@ export type LoginResponse = {
 };
 
 export const login = async ({
-  email,
-  password,
+	email,
+	password,
 }: LoginRequest): Promise<LoginResponse> => {
-  const requestData: LoginRequest = { email, password };
+	const requestData: LoginRequest = { email, password };
 
-  try {
-    const response = await axios.post<LoginResponse>(
-      `${API_URL}/api/login`,
-      requestData
-    );
+	try {
+		const response = await axios.post<LoginResponse>(
+			`${API_URL}/api/login`,
+			requestData
+		);
 
-    localStorage.setItem('user_name', response.data.user.name);
-    localStorage.setItem('access_token', response.data.access_token);
+		localStorage.setItem("user_name", response.data.user.name);
+		localStorage.setItem("access_token", response.data.access_token);
 
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+		return response.data;
+	} catch (error) {
+		throw error;
+	}
 };
 
 export const logout = async (): Promise<void> => {
-  try {
-    const accessToken: string|null = localStorage.getItem("access_token")
-    const response = await axios.post(`${API_URL}/logout`, null, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+	try {
+		const accessToken: string|null = localStorage.getItem("access_token");
+		const response = await axios.post(`${API_URL}/logout`, null, {
+			headers: {
+				Authorization: `Bearer ${accessToken}`,
+			},
+		});
+		return response.data;
+	} catch (error) {
+		throw error;
+	}
 };

@@ -2,7 +2,7 @@ export type AccessToken = string;
 
 export type OrderStatus = "pending" | "completed" | "canceled";
 
-export type PaymentStatus = 'unpaid'| 'paid';
+export type PaymentStatus = "unpaid"| "paid";
 
 export type OrderType = "To-Go" | "Dine-In";
 
@@ -12,12 +12,12 @@ export type User = {
 };
 
 export type Order = {
-  id: number;
+  id?: number;
   description: string | null;
   order_type: OrderType;
   status: OrderStatus;
   payment_status: PaymentStatus;
-  created_at: Date;
+  created_at?: Date;
   items: Item[];
 };
 

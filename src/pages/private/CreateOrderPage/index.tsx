@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import OrderManagementPage from '../HandleOrderPage';
+import OrderManagementPage from "../HandleOrderPage";
 
 const CreateOrderPage: React.FC = () => {
-  const isCreatePage = true;
+	const isCreatePage = true;
 
-  return (
-    <OrderManagementPage isCreatePage={isCreatePage} />
-  );
-}
+	return (
+		<OrderManagementPage isCreatePage={isCreatePage} />
+	);
+};
 
 export default CreateOrderPage;

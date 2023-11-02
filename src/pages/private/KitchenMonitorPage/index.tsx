@@ -6,7 +6,7 @@ import { listOrders } from "../../../services/orders";
 import CardOrder from "../../../components/OrderCard";
 import { Order } from "../../../services/types";
 import { colors } from "../../../styles/colors";
-import ItemTable from "../../../components/ItemTable"
+import ItemTable from "../../../components/ItemTable";
 
 const Container = styled.div`
   padding: 1rem;
@@ -33,35 +33,35 @@ const CardContainer = styled.div`
 `;
 
 const OrderManagementPage: React.FC = () => {
-  const navigate = useNavigate();
-  const [orderList, setOrderList] = useState<Order[]>([]);
+	const navigate = useNavigate();
+	const [orderList, setOrderList] = useState<Order[]>([]);
 
-  useEffect(() => {
-    const fetchOrder = async () => {
-      try {
-        const orders = await listOrders("pending");
-        setOrderList(orders);
-      } catch (error) {
-        console.error('Error fetching Order list:', error);
-      }
-    };
-    fetchOrder();
-  }, []);
+	useEffect(() => {
+		const fetchOrder = async () => {
+			try {
+				const orders = await listOrders("pending");
+				setOrderList(orders);
+			} catch (error) {
+				console.error("Error fetching Order list:", error);
+			}
+		};
+		fetchOrder();
+	}, []);
 
-  return (
-    <>
-      <Container>
-        {orderList.map((order) => (
-          <div key={order.id}>
-            <CardContainer>
-              <CardHeader>Order#{order.id}  {order.order_type}</CardHeader>
-              <ItemTable items={order.items} />
-            </CardContainer>
-          </div>
-        ))}
-      </Container>
-    </>
-  );
+	return (
+		<>
+			<Container>
+				{orderList.map((order) => (
+					<div key={order.id}>
+						<CardContainer>
+							<CardHeader>Order#{order.id}  {order.order_type}</CardHeader>
+							<ItemTable items={order.items} />
+						</CardContainer>
+					</div>
+				))}
+			</Container>
+		</>
+	);
 };
 
 export default OrderManagementPage;

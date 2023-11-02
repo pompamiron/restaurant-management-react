@@ -37,24 +37,24 @@ const TableData = styled.td`
 `;
 
 const Card: React.FC<CardProps> = ({ order }) => {
-  return (
-    <CardContainer>
-      <CardHeader>Order#{order.id}</CardHeader>
-      <Description>{order.description}</Description>
-      <Table>
-        <tbody>
-            <tr>
-              <TableData>Order Type:</TableData>
-              <TableData>{order.order_type}</TableData>
-            </tr>
-            <tr>
-              <TableData>Payment Status:</TableData>
-              <TableData>{order.payment_status}</TableData>
-            </tr>
-        </tbody>
-      </Table>
-    </CardContainer>
-  );
+	return (
+		<CardContainer>
+			<CardHeader>Order#{order.id}</CardHeader>
+			<Description>{order.description}</Description>
+			<Table>
+				<tbody>
+					<tr>
+						<TableData>Order Type:</TableData>
+						<TableData>{order.order_type}</TableData>
+					</tr>
+					<tr>
+						<TableData>Payment Status:</TableData>
+						<TableData>{order.payment_status}</TableData>
+					</tr>
+				</tbody>
+			</Table>
+		</CardContainer>
+	);
 };
 
 export default Card;
