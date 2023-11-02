@@ -25,24 +25,25 @@ The Restaurant Management System is a web application for managing restaurant op
 - axios
 - styled-components
   
-### Installation To run this application locally, follow these steps:
+### Installation To run this application locally
 
-#### Clone this project repository
+- Clone this project repository
 
-#### Change to the project directory: 
+- Change to the project directory: 
 
 `cd task-management-react`
 
-#### Install the dependencies: 
+- Install the dependencies: 
+
 `npm install`
 
-### Usage To start the application, run the following command:
+### Usage To start the application
 
 `npm start`
 
 The application will be running at http://localhost:3001
 
-### Testing To run the tests for the components, use the following command:
+### Testing To run the tests for the components
 
 `npm run test`
 
