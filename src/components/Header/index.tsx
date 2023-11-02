@@ -10,12 +10,12 @@ interface HeaderProps {
 }
 
 interface StyledLinkProps {
-    isselected: boolean;
+  colorlink: string;
 }
   
 
 const StyledLink = styled.a<StyledLinkProps>`
-  color: ${(props) => (props.isselected ? colors.secondary : colors.text)};
+  color: ${(props) => (props.colorlink)};
   text-decoration: none;
   margin-right: 20px;
 `;
@@ -80,7 +80,7 @@ const Header : React.FC<HeaderProps> = ({pathname, authPages}: HeaderProps) => {
           <HeaderLinks>
             {authPages.map((page) => (
                 <HeaderLink key={page.path}>
-                    <StyledLink href={page.path} isselected={pathname === page.path}>
+                    <StyledLink href={page.path} colorlink={pathname === page.path? colors.secondary : colors.text}>
                         {page.name}
                     </StyledLink>
                 </HeaderLink>

@@ -16,14 +16,12 @@ export interface Page {
 
 export const authPages: Page[] = [
 	{ name: "Order Management", path: "/order-management", element: <OrderManagementPage /> },
-	{ name: "Order History", path: "/order-history", element: <OrderManagementPage /> },
 	{ name: "Kitchen Monitor", path: "/kitchen-monitor", element: <KitchenMonitorPage /> },
 ];
 
 const AuthHomePage: React.FC= () => {
 	const location = useLocation();
 
-	console.log(localStorage.getItem("access_token"));
 	return (
 		<>
 			<Header pathname={location.pathname} authPages={authPages} />
@@ -33,6 +31,7 @@ const AuthHomePage: React.FC= () => {
 				))}
 				<Route path="/order/:orderId" element={<HandleOrderPage />} />
 				<Route path="/order/create" element={<CreateOrderPage />} />
+				<Route path="/*" element={<OrderManagementPage />} />
 			</Routes>
 		</>
 	);

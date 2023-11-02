@@ -6,7 +6,7 @@ import { login } from '../../../services/auth';
 
 import { LoginForm, TextInput, LoginFormWrap, Header, SubmitButton} from "./styles";
 
-function LoginPage() {
+const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");

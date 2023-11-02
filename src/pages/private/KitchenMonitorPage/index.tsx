@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import { listOrders } from "../../../services/orders";
-import CardOrder from "../../../components/OrderCard";
 import { Order } from "../../../services/types";
-import { colors } from "../../../styles/colors";
 import ItemTable from "../../../components/ItemTable";
 
 const Container = styled.div`
@@ -33,7 +31,6 @@ const CardContainer = styled.div`
 `;
 
 const OrderManagementPage: React.FC = () => {
-	const navigate = useNavigate();
 	const [orderList, setOrderList] = useState<Order[]>([]);
 
 	useEffect(() => {
