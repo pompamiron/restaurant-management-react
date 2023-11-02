@@ -2,10 +2,6 @@
 
 A web-based restaurant management system built using React.
 
-## Overview
-
-The Restaurant Management System is a web application for managing restaurant operations. It allows restaurant staff to view and manage orders, menu items, and customer information. This system aims to streamline the restaurant's order processing, improve customer service, and enhance overall efficiency.
-
 ## Features
 
 - **Order Management**: Easily view and manage customer orders with order status tracking.
@@ -31,20 +27,20 @@ The Restaurant Management System is a web application for managing restaurant op
 
 - Change to the project directory: 
 
-`cd task-management-react`
+  `cd task-management-react`
 
 - Install the dependencies: 
 
-`npm install`
+  `npm install`
 
 ### Usage To start the application
 
-`npm start`
+  `npm start`
 
 The application will be running at http://localhost:3001
 
 ### Testing To run the tests for the components
 
-`npm run test`
+  `npm run test`
 
 
