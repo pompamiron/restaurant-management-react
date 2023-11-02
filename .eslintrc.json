@@ -1,4 +1,4 @@
-export default {
+{
 	"env": {
 		"browser": true,
 		"es2021": true
@@ -8,8 +8,7 @@ export default {
 		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended"
 	],
-	"overrides": [
-	],
+	"overrides": [],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": "latest",
@@ -37,4 +36,4 @@ export default {
 			"always"
 		]
 	}
-};
+}
