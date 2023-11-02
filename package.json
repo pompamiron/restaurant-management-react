@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.62.0"
+    "@typescript-eslint/parser": "^5.62.0",
+    "jest": "^27.5.1"
   }
 }

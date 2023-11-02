@@ -13,7 +13,6 @@ export const listOrders = async (status?: OrderStatus): Promise<Order[]> => {
 			},
 			params: { status },
 		});
-		console.log(response.data.data);
 		return response.data.data as Order[];
 	} catch (error) {
 		throw error;

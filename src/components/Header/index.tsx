@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import { colors } from "../../styles/colors";
-import { Page } from "../../pages/private"
+import { Page } from "../../pages/private";
 
 interface HeaderProps {
-    pathname: any;
+    pathname: string;
     authPages: Page[];
 }
 
@@ -65,31 +65,31 @@ const LogoutButton = styled.button`
 `;
 
 const Header : React.FC<HeaderProps> = ({pathname, authPages}: HeaderProps) => {
-    const userName = localStorage.getItem("user_name");
+	const userName = localStorage.getItem("user_name");
 
-    const handleLogout = async () => {
-        localStorage.setItem('user_name', '');
-        localStorage.setItem('access_token', '');
-        window.location.reload();
-      };
+	const handleLogout = async () => {
+		localStorage.setItem("user_name", "");
+		localStorage.setItem("access_token", "");
+		window.location.reload();
+	};
 
-    return (
-      <HeaderContainer>
-        <HeaderContent>
-          <HeaderTitle>Hello {userName}!</HeaderTitle>
-          <HeaderLinks>
-            {authPages.map((page) => (
-                <HeaderLink key={page.path}>
-                    <StyledLink href={page.path} colorlink={pathname === page.path? colors.secondary : colors.text}>
-                        {page.name}
-                    </StyledLink>
-                </HeaderLink>
-            ))}
-          <LogoutButton onClick={() => handleLogout()}>Logout</LogoutButton>
-          </HeaderLinks>
-        </HeaderContent>
-      </HeaderContainer>
-    );
-  };
+	return (
+		<HeaderContainer>
+			<HeaderContent>
+				<HeaderTitle>Hello {userName}!</HeaderTitle>
+				<HeaderLinks>
+					{authPages.map((page) => (
+						<HeaderLink key={page.path}>
+							<StyledLink href={page.path} colorlink={pathname === page.path? colors.secondary : colors.text}>
+								{page.name}
+							</StyledLink>
+						</HeaderLink>
+					))}
+					<LogoutButton onClick={() => handleLogout()}>Logout</LogoutButton>
+				</HeaderLinks>
+			</HeaderContent>
+		</HeaderContainer>
+	);
+};
   
 export default Header;
