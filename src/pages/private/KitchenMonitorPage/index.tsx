@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 
 import { listOrders } from "../../../services/orders";
 import { Order } from "../../../services/types";
@@ -33,16 +32,28 @@ const CardContainer = styled.div`
 const OrderManagementPage: React.FC = () => {
 	const [orderList, setOrderList] = useState<Order[]>([]);
 
+	const fetchOrder = async () => {
+		try {
+			const orders = await listOrders("pending");
+			setOrderList(orders);
+		} catch (error) {
+			console.error("Error fetching Order list:", error);
+		}
+	};
+
+	// TODO: use Web Socket for more efficiency
 	useEffect(() => {
-		const fetchOrder = async () => {
-			try {
-				const orders = await listOrders("pending");
-				setOrderList(orders);
-			} catch (error) {
-				console.error("Error fetching Order list:", error);
-			}
-		};
 		fetchOrder();
+
+		// Periodically fetch data every 30 seconds
+		const intervalId = setInterval(() => {
+			fetchOrder();
+		}, 30000);
+
+		// Cleanup the interval on unmount or when the component is re-rendered
+		return () => {
+			clearInterval(intervalId);
+		};
 	}, []);
 
 	return (
