@@ -13,5 +13,5 @@ export const listMenuItems = async (): Promise<MenuItem[]> => {
 			Authorization: `Bearer ${accessToken}`,
 		},
 	});
-	return response.data;
+	return response.data.data;
 };

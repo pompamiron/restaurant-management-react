@@ -1,7 +1,6 @@
+/* eslint-disable no-useless-catch */
 import axios from "axios";
-
 import API_URL from "../config";
-
 import { Order, OrderStatus } from "./types";
 
 // Service functions for orders
@@ -12,9 +11,10 @@ export const listOrders = async (status?: OrderStatus): Promise<Order[]> => {
 			headers: {
 				Authorization: `Bearer ${accessToken}`,
 			},
-			params: { status }, // Pass the status as a query parameter
+			params: { status },
 		});
-		return response.data;
+		console.log(response.data.data);
+		return response.data.data as Order[];
 	} catch (error) {
 		throw error;
 	}
@@ -28,7 +28,7 @@ export const showOrder = async (orderId: number) => {
 				Authorization: `Bearer ${accessToken}`,
 			},
 		});
-		return response.data as unknown as Order;
+		return response.data.data as Order;
 	} catch (error) {
 		throw error;
 	}
@@ -48,7 +48,7 @@ export const createOrder = async (orderData: Order) => {
 	}
 };
 
-export const updateOrder = async (orderId: number, updatedOrderData: any) => {
+export const updateOrder = async (orderId: number, updatedOrderData: Order) => {
 	try {
 		const accessToken: string | null = localStorage.getItem("access_token");
 
@@ -59,9 +59,9 @@ export const updateOrder = async (orderId: number, updatedOrderData: any) => {
 				headers: {
 					Authorization: `Bearer ${accessToken}`,
 				},
-			},
+			}
 		);
-		return response.data;
+		return response.data; // Use response.data to access the response body
 	} catch (error) {
 		throw error;
 	}
