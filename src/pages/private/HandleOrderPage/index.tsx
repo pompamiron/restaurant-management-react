@@ -117,7 +117,7 @@ const OrderManagementPage: React.FC<OrderManagementPageProps> = ({
   
 	const handleUpdateQuantity = (rowIndex: number, newValue: string) => {
 		const updatedItems = [...items];
-		updatedItems[rowIndex].quantity = parseInt(newValue, 10); // Convert newValue to a number if needed
+		updatedItems[rowIndex].quantity = parseInt(newValue, 10);
 		setItems(updatedItems);
 	};
 

@@ -9,7 +9,7 @@ import {
   StyledTableHeader,
   StyledTableRow,
   StyledTableCell,
-  AddButton, // Replace with your button component for adding items
+  AddButton,
   CloseButton,
   PopupOverlay, 
   PopupContent,
