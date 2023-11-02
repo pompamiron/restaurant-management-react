@@ -16,26 +16,33 @@ The Restaurant Management System is a web application for managing restaurant op
 
 - **Kitchen Mornitorings**: Get real-time updates on incoming orders and their status.
 
-### Prerequisites
+## Prerequisites
 
-## Dependencies This application uses the following dependencies:
+### Dependencies This application uses the following dependencies:
 
-Node.js
-React
-axios
-styled-components
-## Installation To run this application locally, follow these steps:
+- Node.js
+- React
+- axios
+- styled-components
+  
+### Installation To run this application locally, follow these steps:
 
-Unzip the project files
-Change to the project directory: cd task-management-react
-Install the dependencies: npm install
-## Usage To start the application, run the following command:
+#### Clone this project repository
+
+#### Change to the project directory: 
+
+`cd task-management-react`
+
+#### Install the dependencies: 
+`npm install`
+
+### Usage To start the application, run the following command:
 
 `npm start`
 
 The application will be running at http://localhost:3001
 
-## Testing To run the tests for the components, use the following command:
+### Testing To run the tests for the components, use the following command:
 
 `npm run test`
 
