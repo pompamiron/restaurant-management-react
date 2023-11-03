@@ -16,7 +16,6 @@ A web-based restaurant management system built using React.
 
 ### Dependencies This application uses the following dependencies:
 
-- Node.js
 - React
 - axios
 - styled-components
@@ -27,7 +26,7 @@ A web-based restaurant management system built using React.
 
 - Change to the project directory: 
 
-  `cd task-management-react`
+  `cd reataurant-management-react`
 
 - Install the dependencies: 
 
