@@ -42,7 +42,7 @@ describe("Private pages test", () => {
 		localStorage.setItem("access_token", "token");
 
 		jest.mock("react-router-dom", () => ({
-			...jest.requireActual("react-router-dom") as any,
+			...jest.requireActual("react-router-dom"),
 			useNavigate: () => mockedUsedNavigate,
 		}));
 

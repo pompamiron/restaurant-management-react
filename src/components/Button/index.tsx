@@ -24,31 +24,31 @@ const StyledButton = styled.button<ButtonProps>`
   }
   ${(props) => props.style};
   ${(props) =>
-    props.disabled
-      ? `
+		props.disabled
+			? `
     background-color: ${colors.gray};
     cursor: not-allowed;
   `
-      : ""};
+			: ""};
 `;
 
 const Button: React.FC<ButtonProps> = ({
-  color = colors.primary,
-  onClick,
-  children,
-  style,
-  disabled = false,
+	color = colors.primary,
+	onClick,
+	children,
+	style,
+	disabled = false,
 }) => {
-  return (
-    <StyledButton
-      color={color}
-      onClick={onClick}
-      style={style}
-      disabled={disabled}
-    >
-      {children}
-    </StyledButton>
-  );
+	return (
+		<StyledButton
+			color={color}
+			onClick={onClick}
+			style={style}
+			disabled={disabled}
+		>
+			{children}
+		</StyledButton>
+	);
 };
 
 export default Button;
